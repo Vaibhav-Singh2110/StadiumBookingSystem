@@ -30,7 +30,7 @@ const ListStadium = () => {
     axios
       .get(`http://localhost:5000/api/add/listStadium/${email}`, config)
       .then((response) => {
-        console.log(response.data[1].stadium_owned[0].stadium_name);
+        // console.log(response.data[1].stadium_owned[0].stadium_name);
         setStadiumData(response.data);
       });
   }, []);
@@ -280,8 +280,8 @@ const ListStadium = () => {
                     )}
                   </Td>
                   <Td>
-                    <Edit width="32" height="32" onClick={updateNote} />
-                    <Trash2 width="32" height="32" color="red" onClick={DeleteNote}></Trash2>
+                    <Edit width="25" height="25" onClick={updateNote} />
+                    <Trash2 width="25" height="25" color="red" onClick={DeleteNote}></Trash2>
                   </Td>
 
                 </Tr>

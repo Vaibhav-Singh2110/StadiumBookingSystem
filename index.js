@@ -16,6 +16,16 @@ app.use(bodyParser.urlencoded({
   extended:true
 }))
 
+app.use(express.static(path.join(__dirname,'./frontend/build')));
+app.get("*",function(_,res){
+  res.sendFile(
+    path.join(__dirnamw,"./frontend/build/index.html"),
+    function(err){
+      res.status(500).send(err);
+    }
+  )
+});
+
 const DB = 'mongodb+srv://vaibhavsingh123:Vaibhav123@cluster0.sl7of6y.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.connect(DB,{
